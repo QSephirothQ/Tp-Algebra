@@ -100,3 +100,13 @@ traducirCodonAAminoacido (G, G, A) = Gly
 traducirCodonAAminoacido (G, G, U) = Gly
 traducirCodonAAminoacido (G, G, C) = Gly
 traducirCodonAAminoacido (G, G, G) = Gly
+
+complementarBase :: BaseNucleotidica -> BaseNucleotidica
+complementarBase A = T
+complementarBase C = G
+complementarBase G = C
+complementarBase T = A
+
+complementarCadenaDNA :: CadenaDNA -> CadenaDNA
+complementarCadenaDNA [] = []
+complementarCadenaDNA (x:xs) = complementarBase x : complemtarCadenaDNA xs
